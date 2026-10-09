@@ -1,0 +1,255 @@
+This is Weston Platt doing an interview with a teacher from North Ogden Junior High.
+
+The purpose of this interview is to analyze their interactions with the Weber State Canvas Portal LMS system
+
+and the notable friction they have using the system as we proceed.
+
+So, what is the biggest issue you have with the Canvas Portal?
+
+With Canvas Portal, one of the biggest issues I have is the fact...
+
+Sorry about that. They had a call.
+
+Well, again, for the record, what is your one biggest issue with the Canvas Portal?
+
+It's... I have several issues.
+
+But one of my biggest issues is the imported assignment area.
+
+Logic states when you're adding something to an existing thing that it would go to the bottom.
+
+So, for example, what you can see on my screen right now, I imported three things today.
+
+And one hit the very, very top.
+
+Okay.
+
+One is six down.
+
+And the other one is seven down out of this entire list of things I've imported.
+
+When you import something new, logic states it should go to the bottom.
+
+Yep.
+
+And when I set my due dates, there is no way for me to sort these assignments based off of date.
+
+Interesting.
+
+And so, it's very ineffective.
+
+Because as a teacher, if you want your assignment area to keep... be organized for student usage, you manually have to go in, set the due date, make sure it's published, make sure that it's going to go to our grading systems.
+
+And then you have to find the due date and sort them by hand to when you wanted to show up.
+
+And it is frustrating.
+
+And if you do something wrong, like I must have just done, it disappears on you.
+
+Oh, there it is.
+
+It just dropped prematurely.
+
+How much explanation as a teacher do you get given about how to manage and set up your assignments, your modules, and the ability for students to access resources?
+
+We did have a few tutorials and trainings that they had us go through the first year they implemented Canvas on campus.
+
+However, it was blind teaching the blind.
+
+It was teachers who had piloted the program trying to teach us the rest.
+
+They had taught themselves.
+
+I do go out when I have questions, and I'm really good about researching how do I do this.
+
+Some of the things that drive me the most crazy, however, even when you Google it, there is no solution for it.
+
+It is what it is.
+
+It's a flaw in the program.
+
+But it does escalate things.
+
+And I've noticed helping on concurrent enrollment classes or other college student classes, I have seen the disconnect and the confusion that the lack of organization can cause on people.
+
+One way I have corrected this myself is I have assignments turned off from student view.
+
+So it only drives me crazy, not them.
+
+And I break down everything by modules.
+
+Each module is a learning objective.
+
+And I use the headings to show specific dates.
+
+I use very colorful icons to help do it.
+
+My other issue with Canvas is there's no way to add images onto your module screen so that the kids can't see an image and be directed.
+
+What people don't realize that, yes, newspapers are written on the fourth grade reading level because they figure that is the lowest standard of education people have.
+
+But as an educator, I am seeing people with lower and lower reading levels.
+
+They need visual images.
+
+Some people are very visual learners.
+
+When we take visuality out of learning, we're hindering a good quarter of our students.
+
+Something I noticed while you were moving through the pages is the sidebar has far more options than the students.
+
+Do you even know what half of those do?
+
+Honestly, no.
+
+The bottom half, I know some of them, like Canva for Education, Adobe.
+
+I know those.
+
+I utilize those as tools for my students.
+
+But like the big blue button, I have no idea what that is.
+
+I believe that is a testing system.
+
+I've never received any training on it, so yeah, no clue.
+
+Amplify, I've seen three different AIs.
+
+Parchment badges, Google Gemini, ABC.
+
+Well, I know what Google Gemini is, but I don't know why it's part of my Canvas course.
+
+ABC, Clio-based junior high school.
+
+I'm like, hands.
+
+How many of these do students see?
+
+I close them down so students don't see them.
+
+So everywhere there's an eye closed.
+
+The students can't see those on mine.
+
+Let me show you even a better example.
+
+My seventh graders, I clamp down a lot more things than I do with even my eighth graders or my ninth graders.
+
+But as you can see, for my students, I let them see home, modules, grade, people, files, Adobe Creative Cloud, Canva for Education, and everything else is blocked for them because they have no need for it.
+
+And so I closed that all down.
+
+The reason some of those in the ninth grade class you just saw are open is because I imported the curriculum from another teacher.
+
+And they're from a different district.
+
+And so therefore there was even extra things brought in that are not typically options at my school district.
+
+But for some reason they carried over when I imported from another school district.
+
+For example, Google Gemini because I see the Ignite AI search as one of your locked down ones.
+
+But Google Gemini and Ignite search were both on the other one.
+
+Exactly.
+
+And so as people doing PLCs across the state, we often collaborate with other teachers.
+
+Canva is statewide, so we're all utilizing it.
+
+But I hear an overall discontent and disconnect with this program that there are glitches in it that if they had a teacher or a group of teachers that worked with them on this program,
+
+that they could create a product that would make more of us satisfied and more of us happy by actually communicating to us on things that are so non-educated.
+
+And so we're not going to be able to do that.
+
+We're not going to be able to do that.
+
+Okay.
+
+What sort of glitches do you and your fellow colleagues notice that have diswayed you from the normal expected path of walk you would expect using such a system?
+
+Testing banks is one of the issues we have.
+
+I have frequently ran into where I pull in a test for my sandboxes, which is where we're supposed to compile everything, create our test banks.
+
+We have all the proper connections.
+
+And lo and behold, like today, I had to import this same assignment three times after deleting it twice to get my test bank to finally come through.
+
+Even though I didn't have to change anything for the third time to actually successfully have it connect.
+
+I didn't, I'm going, I didn't have to change names.
+
+I didn't have to change titles.
+
+It just finally connected through and worked.
+
+It had worked in previous transfers into older sections of this class, but for this one, it took three tries.
+
+Okay.
+
+And we also see that there's frequently where we have to remaster the information being sent to our grading programs because it's not communicating properly that way as well.
+
+And so we have to do manual override remasters, which took a little while to figure out how to do and where to find it because it's not where you would think it would be.
+
+How so?
+
+So you would think you would go into grades, right?
+
+Yes.
+
+If you're looking at grades, you would think, oh, this is where I would, you know.
+
+For students like myself, that is where we go to check our grades.
+
+Yes.
+
+And I have a sync button that sends it to my program.
+
+So I can click here manually and say I need you to sync outside of my traditional once a day that it allows it to update.
+
+Yes.
+
+Canvas only allows automatic updating once in a 24-hour period.
+
+Everything else is a manual push.
+
+So if I enter in a score and I don't do a manual push, my students can't see it until the automatic update time.
+
+Mine happens to be at 2.03 a.m.
+
+Every teacher is assigned a different time and it's random.
+
+So unless I come here to do a manual push saying, I need these grades posted immediately, it's not going to communicate with our program.
+
+Okay.
+
+But from there, you just saw me do a manual push.
+
+Yes.
+
+Well, sometimes the manual pushes don't work.
+
+For example, if I were to put a date on incorrectly and I redid my date, it actually makes it so that it will give a false assignment inside of PowerSchool if it had already uploaded.
+
+Now, I told you it only automatically updates once a day.
+
+Well, as teachers, we've found where we've accidentally imported something with a due date and went, ha!
+
+And we instantly changed that due date, it'll still make it up to Canvas almost instantly with the wrong due date.
+
+Because, you know, Murphy's Law, that when you don't want something to happen, it does.
+
+It happens with this program a little more frequently than we like.
+
+So to remaster it, if I have to take it off my main program, I actually have to remaster it, and I have to remaster it for each of my sections.
+
+Okay.
+
+And so to remaster...
+
+Did you take this...
+
+Okay.

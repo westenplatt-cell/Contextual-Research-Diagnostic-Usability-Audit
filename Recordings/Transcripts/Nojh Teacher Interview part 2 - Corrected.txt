@@ -1,0 +1,478 @@
+<CONTINUATION FROM NOJH TEACHER INTERVIEW>
+
+T: So, for the remastering I was talking about, you have to come here to Grade Sync, which is further down the list, one I always block out from students because they don't need to know what's going on with this.
+
+T: But then you would think, oh, if I hit refresh, it's going to remaster or it's going to tell me that I have errors.
+
+T: So, this particular class, it's been long enough since I've had an error you can't see it, even though this class did have a major error about a month and a half ago.
+
+T: I had to come in here to Utilities.
+
+
+W: That is a very empty page.
+
+
+T: Yes, a very empty page.
+
+T: Well, it shows my nightly sync.
+
+T: Well, yeah, there's a button before it.
+
+
+W: It says Remaster Grade Passback.
+
+
+T: Well, you would think, oh, this is just with something to do with the nightly sync.
+
+T: No.
+
+T: You only hit that button if you want to wipe out everything on the sister program and have it start fresh totally over.
+
+T: But you have to do it for every class period with the actual class being the only class selected.
+
+T: But it shows nothing of that here.
+
+
+W: That selection is on another page?
+
+
+T: Yes.
+
+
+W: So, as you move between pages, you have to remember certain selected toggles and modules?
+
+
+T: Yes.
+
+
+T: So, I would have to come back to Grades.
+
+T: I have to go to Filters.
+
+T: Because I've tried just doing it and I have to select my section I want it to do.
+
+T: And then after it's selected, then I have to go back to the Grade Sync page and I have to remaster it.
+
+T: Then I have to go back and pick the other class and remaster it again.
+
+T: Plus, I have to go into the sister program.
+
+T: We are not covering the sister program, so no need to open it.
+
+T: I have to go into that program and I have two steps I have to do there as well to get the remastered finish.
+
+
+
+W: So, in summary of this section, a great deal of working with a sister program to share grades is tedious and there are syncs and it requires you to have certain toggles and remember what you selected previously.
+
+W: And it is overall a nightmare of a system because the Canvas system does not seem to be purposely suited to working with another system. It has to be done with additional programs and systems and it's a mess.
+
+
+T: Yes.
+
+T: And one of the other things is Canvas doesn't say anything.
+
+T: Every time we get a new class, we have to go back in and reset every single setting.
+
+T: We have to go back to what we need it to be.
+
+T: We have to come in here to in the grading area to our settings inside the grading area so that it automatically applies missing assignments, great assignment grades to a certain percentage.
+
+T: Automatically applying our late deduction.
+
+T: We have to reset our grading policies.
+
+T: We have to reset our view options of how we want them to be, how we want them to show up.
+
+T: And in another category, when we're grading with the speed grader, we have to set up every year, every new section.
+
+T: And for me, I teach quarter sections.
+
+T: So they're half the normal length.
+
+T: I have to do this four times every year.
+
+T: And this is the biggest problem that teachers have is when we change semesters that they forget to reset all of these options up.
+
+T: So here's some more options.
+
+T: I have to change my submission status of how I want it to be graded.
+
+T: And we're having to do this every time.
+
+T: Well, if you are only doing things twice a year or even me with four times a year, sometimes you forget to do it, but then it won't sync to the sister program at all.
+
+
+W: And this is so tedious.
+
+W: Wow, I'm glad I'm not a teacher.
+
+
+T: And one other thing we have to set with this whole startup thing.
+
+T: Let me come back.
+
+T: So if I come back to here because it's off of another screen altogether, I have to come to the assignment page.
+
+T: And to get it to connect to our sister program, we also have to come to a tab here.
+
+T: And we have to sync our SIS categories.
+
+T: And we have to do that for each of the sections inside the sections.
+
+T: So if I come here to imported, I have to manually sync these as well.
+
+T: These have been already done for the year, but I have to manually sync those as well to get grades to go through.
+
+T: So to get my grades to go through, I'm on four different screens just to get my grades to go.
+
+T: And yes, three of those screens are only once a year or once a section.
+
+T: But you have to remember to do it because even if you import a class that you have this all set up on in your sandbox, it will not transfer into the new course.
+
+
+W: So one of the questions I had thought up earlier was what sort of steps does it take to connect and organize your modules?
+
+W: For the student viewing, how complex is it to set up the list so students can just move quickly through your pages?
+
+
+T: Okay, the first time I did it, <Sad laughter> it took almost five working days, eight-hour days.
+
+T: It took me about 40 hours.
+
+T: Now that I have a sandbox where it's set up, it's much easier to do because I can do little mild modifications.
+
+T: And one trick I learned is one of my sandboxes is actually the term dates.
+
+T: I used to manually go through at the first of every quarter and add in all the dates.
+
+T: But I created myself a sandbox that is called term dates.
+
+
+W: So would you say the sandbox is probably your favorite part of the canvas?
+
+
+T: Yes, because I created all my due dates this summer, off company hours, to create all my due dates.
+
+T: So I had all my days off correct.
+
+T: I had everything.
+
+T: So I created term ones one through four.
+
+T: I shared these with other teachers in my building.
+
+T: I sent this just out to everybody that I kind of mentor or help.
+
+T: And I sent those all out to them so that they were able to download them into theirs as well.
+
+T: By doing this, I just enter in the dates I need.
+
+T: I do have a few classes that are only taught on A days, some that are only taught on B day.
+
+T: So I've had to delete a tiny bit importing it in.
+
+T: But having it in the one place, this alone saves me hours of work.
+
+T: And I think it's one of those things that makes it really clear to my students the expectation of when we're starting an assignment, when they need to start working on it, not just the due date.
+
+
+W: Would you say, as a teacher, the biggest part of using Canvas is the ability to know what you are doing?
+
+
+T: Yes.
+
+T: Teachers who haven't figured out, I have a colleague at a different school who categorically refuses to learn this program because we had already previously used three other SISs before this one.
+
+T: And they were just tired of, I learned something, I get certified in it,
+
+T: I spend two years transferring everything to this platform, and then they change us again.
+
+T: So when we hit this platform, which is not very user-friendly, there's a lot of steps, a lot of remembrances, a lot of back prep.
+
+T: He wasn't willing to do it.
+
+T: And so he still runs with not utilizing this program at all.
+
+T: He didn't even use it during COVID, to tell you the truth.
+
+T: I see resistance to this.
+
+T: Now, our newer teachers coming in who went to school using Canva, their learning curve is not as great as those of us who had used other things previously, but yet we still need to sit down with them as mentors and show them how to utilize the program.
+
+T: My biggest dream job is to design Canvas courses for Weber State University because after seeing students go through these courses,
+
+T: there are so many that are so disorganized and so chaotic that I can tell they're not getting the in-depth training or their personality types are a little more scattered in personality, and so they don't realize the need for organization.
+
+
+W: Okay.
+
+W: Moving away from your courses, how easy is it to communicate using Canvas with a student?
+
+
+T: We do have the feature on Canvas, the mailbox, which is right here, inbox.
+
+T: I prefer my students not to use this.
+
+T: I would rather get an email.
+
+
+W: Why?
+
+
+T: The reason for that is even though it's taking me to another thing,
+
+T: I get a little tiny one that will show up there to say I have a message.
+
+T: When I'm teaching, when I'm interacting, when I'm lecturing,
+
+T: that number can climb and I won't even notice it because it doesn't change colors.
+
+
+W: And is there any sounds, notifications?
+
+
+T: No.
+
+
+W: It's just a small number that...
+
+
+T: It's in a white circle that when I'm looking, I don't see it.
+
+T: So if you look here at this help, can you see that one right there?
+
+T: That means I have a new help that's been posted by our school district.
+
+T: Well, that tiny of a thing, I can't even tell you how many days that's been there
+
+T: because I just barely noticed it when I was talking to you.
+
+
+W: That is kind of sad.
+
+
+T: You know, if it changed colors, if it did something, I am a visual learner.
+
+T: Every one of my assignments, if I were to take you into one of my courses,
+
+T: you would see images that I've embedded.
+
+T: I have presentations.
+
+T: I have the step-by-steps because I need the visualization.
+
+
+W: How difficult is it to put a picture or video or presentation inside your pages for people to use?
+
+
+T: At first, when we first got the program, it was nightmarish.
+
+T: They have improved.
+
+T: And they have actually improved a lot, which I'm very grateful for.
+
+T: Now, as long as I'm using cuss word, cuss word, cuss word, Google, things are really easy to import.
+<Literally said cuss word, this was not censored by me>
+
+T: I am not a big, huge Google fan.
+
+T: I'm a business teacher.
+
+T: I teach professional software.
+
+T: I don't like how Canvas interacts with Microsoft products.
+
+T: It makes people scroll to see all my slides instead of just transitioning normally.
+
+T: So, what I do is I create everything in PowerPoint.
+
+T: Then I save it into my Google Drive.
+
+T: And then I change it over to Google.
+
+T: And then check it for any font issues or any problems that way.
+
+T: But as you can see, once that is imported, it looks really nice.
+
+T: And I do the same thing with, I'm now using Canva a lot.
+
+T: And I actually code in HTML to import it in.
+
+T: Because Canvas does have an HTML feature.
+
+T: So, we can program and code.
+
+T: We can create tabs.
+
+T: But all of my knowledge from that has came from alternative resources.
+
+T: I had a teacher who had already pre-set it up that shared me something.
+
+T: I have had to do a lot of research.
+
+T: I've had to ask one of my 'favorite computer science students' from the past to help me occasionally when the code breaks.
+
+T: You're welcome.
+
+
+W: Yes, that was me.
+
+
+T: And so, I've had to teach myself a lot.
+
+T: But also ask a lot of good questions.
+
+T: When teachers see my assignments that have the code to them, they're like so impressed and so amazed.
+
+T: And I've shared my base multiple times.
+
+T: And they've taken my base code and changed it to create stuff that they were really interested in.
+
+T: Having that multi-tier function.
+
+T: Why tabs aren't something that you could pre-insert.
+
+T: I'm not quite sure.
+
+T: It, to me, wouldn't...
+
+T: Coding-wise, shouldn't be that challenging in our toolbar to have it allow us to add a tab break in between.
+
+T: So, I've pulled that up on my screen, too, so you can take a screenshot.
+
+T: But, um...
+
+T: Canvas has improved since I started having to use it in 2021.
+
+T: But I do feel it still has a long ways to go.
+
+
+W: Okay.
+
+W: We have spent quite a long time covering this.
+
+W: Is there any last thoughts, to summarize everything, about Canvas and its usability that you would say is a positive?
+
+
+T: One positive I like is their calendaring tool.
+
+T: I've taught my students how to utilize this.
+
+T: And that the calendaring tool is a good tool for prepping up.
+
+T: If students need to have day planners to know what they're working on, having this calendaring tool is really good.
+
+T: I also like showing the students mine and say, okay, everything on this page is something I have to grade that day.
+
+T: And the kids, when they see that my assignment list for all of the sections I'm teaching is extremely long,
+
+T: they're a little bit more empathetic about how they submit things.
+
+T: I ask kids to submit them in very specific formats and very specific ways.
+
+T: And I explain to them, it's the difference of grading an assignment in one to five minutes
+
+T: compared to me grading an assignment that could take me up to 10 to 15 minutes to find,
+
+T: if they don't submit things in the proper order.
+
+T: And when the kids see how much I'm grading on an almost daily basis,
+
+T: that they're really good about submitting it correctly.
+
+T: They know that I have my rubrics.
+
+T: I love the rubric feature on Canvas.
+
+T: It's amazing.
+
+T: And it really does help me grade more consistently and fairly, I believe.
+
+T: I also like that it hides whose assignment it is.
+
+T: I can set it up in settings.
+
+T: So I don't know who I'm grading.
+
+T: I like that.
+
+
+W: I like knowing that's an option because I know some teachers probably would be biased for their students.
+
+
+T: Yes.
+
+T: And not all teachers choose to do it.
+
+T: And probably the ones who are the most biased are the ones who don't.
+
+T: I found that it really helped me not to know.
+
+T: And then it also forced me to consciously think of my 504 and IEP students I have to do accommodation or modifications for.
+
+T: That I intentionally remember to go back to look at them.
+
+T: But it also helps me to keep them fresher in my mind.
+
+T: So I'm helping them more in class.
+
+
+W: Okay.
+
+W: For modifications on assignments, how easy or difficult or straightforward is it to add special exceptions to a student's assignment?
+
+
+T: There is no way that I can find to do it.
+
+
+W: There is no way to add an accessibility option for a student who can't see, who is deaf, who needs a little extra time just individually.
+
+
+T: No.
+
+T: Not that I've ever been able to find.
+
+T: And I have Google searched it and nothing I can see allows me to add in accommodations.
+
+T: That is one thing that if they could fix and ad, I spend probably at least 30 minutes to an hour every day just on making sure I'm current on all of those requirements on my students' assignments.
+
+
+W: So something like that has popped into my mind as an accessibility, if a student needed more time to resubmit an assignment or something and you had marked the assignment?
+
+
+T: I have to open it up for everybody.
+
+
+W: And so anybody could resubmit during that period of time.
+
+
+T: Yes.
+
+
+W: So, okay.
+
+
+T: It makes it really frustrating for some teachers.
+
+T: And I know some teachers who will not allow a resubmission on Canvas because of it.
+
+T: They make them turn it in an alternative way, which I personally don't feel is fair.
+
+T: I think students, if they have worked their hineys off, they deserve the teacher's time to give them feedback.
+
+T: And I think it should be timely feedback.
+
+
+W: Okay.
+
+W: Thank you for your help.
+
+W: Thank you for giving me such good feedback on the teacher's perspective of the Canvas situation and all the details about organizing and setting up Canvas to be used by students.
+
+T: You're welcome. Anytime.
+
+W: Thank you.
+
+<Transcribed Via Vibe AI Audio Transcriber>
+<Edited and Clarified by Westen Platt 10/8/26>
