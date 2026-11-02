@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grades</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="global-nav" aria-label="Global Navigation">
+        <ul style="list-style-type: none;">
+        <li><a class="nav-button" href="dashboard.html" aria-label="Canvas Page">Canvas</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Profile Page">Profile</a></li>
+        <li><a class="nav-button" href="dashboard.html" aria-current="page" aria-label="Canvas Page">Dashboard</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Calendar Page">Calendar</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Canvas Page">Inbox</a></li>
+        <li><a class="nav-button" data-open-error aria-label="History Page">History</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Media Page">Media </a></li>
+        </ul>
+    </nav>
+    <header class="topbar">
+        <h1><a href="modules.html"  aria-label="Class One">Class One</a></h1>
+        <h1>></h1>
+        <h1><a href="grade.html"  aria-label="Grades">Grades</a></h1>
+        <h1>></h1>
+        <h1 >User</h1>
+    </header>
+    <div class="course-layout">
+        <nav class="course-nav" aria-label="Class One Navigation">
+            <ul>
+                <li><a class="course-nav-button" href="modules.html" aria-label="Home Landing Page">Home</a></li>
+                <li><a href="modules.html" aria-label="Module Page">Modules</a></li>
+                <li><a data-open-error style="text-decoration: underline;" aria-label="Assignment Page">Assignments</a></li>
+                <li><a data-open-error style="text-decoration: underline;" aria-label="Quiz Page">Quiz</a></li>
+                <li><a href="grade.html" aria-current="page" aria-label="Grade Page">Grades</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="app-screen course-screen">
+            <section aria-labelledby="User-Grades" style="margin-left:-100px;">
+                <h2>Grades for User</h2>
+            
+                <section aria-labelledby="grades-heading">
+                    <form action="#" method="get">
+                        <fieldset>
+                        <legend >Filter grades</legend>
+
+                        <label for="grade-course" aria-lable="Course Filter">Course Filter</label>
+                        <select id="grade-course" name="course" >
+                            <option value="class-one"  aria-label="Class One">Class One</option>
+                        </select>
+
+                        <label for="grade-sort" aria-lable="Sort Filter">Sort by</label>
+                        <select id="grade-sort" name="sort">
+                            <option value="due-date">Due date</option>
+                            <option value="assignment">Assignment Group</option>
+                            <option value="quiz">Quiz Group</option>
+                            <option value="module">Module</option>
+                            <option value="name">Name</option>
+                        </select>
+                        </fieldset>
+                    </form>
+
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                <th scope="col" aria-lable="Name">Name</th>
+                                <th scope="col" aria-lable="Due">Due</th>
+                                <th scope="col" aria-lable="Submitted">Submitted</th>
+                                <th scope="col" aria-lable="Status">Status</th>
+                                <th scope="col"  aria-lable="Score">Score</th>
+                                <th scope="col" aria-lable="Compare">Compare</th>
+                                <th scope="col" aria-lable="Feedback">Feedback</th>
+                                <th scope="col" aria-lable="Comment">Comment</th>
+                                </tr>
+                            </thead>
+
+                            <!-- ######### DUE DATE ######### -->
+                            <tbody id="due-date">
+                                <tr class="sort-divider"><th colspan="8">Due: 11/1</th></tr>
+                                <tr>
+                                    <th scope="row" aria-lable="Introduction Quiz">Introduction Quiz</th>
+                                    <td>10/30</td>
+                                    <td>10/31</td>
+                                    <td>Late</td>
+                                    <td>12/15</td>
+                                    <td><div class="compare-box">\/</div></td>
+                                    <td><div class="feedback-box">1</div></td>
+                                    <td><div class="comment-box">0</div></td>
+                                </tr>
+                                
+                                <tr class="sort-divider"><th colspan="8">Due: 11/1</th></tr>
+                                <tr>
+                                <th scope="row" aria-lable="Assignment 1">Assignment 1</th>
+                                <td>11/1</td>
+                                <td>11/12</td>
+                                <td>Pending</td>
+                                <td>/30</td>
+                                <td><div class="compare-box">\/</div></td>
+                                <td><!-- feedback indicator/count --></td>
+                                <td><!-- feedback indicator/count --></td>
+                                </tr>
+                            </tbody>
+
+                            <!-- ######### ASSIGNMENT GROUP ######### -->
+                            <tbody id="assignment" hidden>
+                                <tr>
+                                    <th scope="row" aria-lable="Assignment 1">Assignment 1</th>
+                                    <td>11/1</td>
+                                    <td>11/12</td>
+                                    <td>Pending</td>
+                                    <td>/30</td>
+                                    <td><div class="compare-box">\/</div></td>
+                                    <td><!-- feedback indicator/count --></td>
+                                    <td><!-- feedback indicator/count --></td>
+                                </tr>
+                            </tbody>
+
+                            <!-- ######### QUIZ GROUP ######### -->
+                            <tbody id="quiz" hidden>
+                                <tr>
+                                    <th scope="row" aria-lable="Introduction Quiz">Introduction Quiz</th>
+                                    <td>10/30</td>
+                                    <td>10/31</td>
+                                    <td>Late</td>
+                                    <td>12/15</td>
+                                    <td><div class="compare-box">\/</div></td>
+                                    <td><div class="feedback-box">1</div></td>
+                                    <td><div class="comment-box">0</div></td>
+                                </tr>
+                            </tbody>
+
+                            <!-- ######### Module ######### -->
+                            <tbody id="module" hidden>
+                                <tr class="divider"><th colspan="8">Module One: Week One</th></tr>
+                                    <tr>
+                                    <th scope="row" aria-lable="Introduction Quiz">Introduction Quiz</th>
+                                    <td>10/30</td>
+                                    <td>10/31</td>
+                                    <td>Late</td>
+                                    <td>12/15</td>
+                                    <td><div class="compare-box">\/</div></td>
+                                    <td><div class="feedback-box">1</div></td>
+                                    <td><div class="comment-box">0</div></td>
+                                    </tr>
+                                <tr>
+                                    <th scope="row" aria-lable="Assignment 1">Assignment 1</th>
+                                    <td>11/1</td>
+                                    <td>11/12</td>
+                                    <td>Pending</td>
+                                    <td>/30</td>
+                                    <td><div class="compare-box">\/</div></td>
+                                    <td><!-- feedback indicator/count --></td>
+                                    <td><!-- feedback indicator/count --></td>
+                                </tr>
+                            </tbody>
+
+                            <!-- ######### NAME ######### -->
+                            <tbody id="name" hidden>
+                                
+                                <tr>
+                                    <th scope="row" aria-lable="Assignment 1">Assignment 1</th>
+                                    <td>11/1</td>
+                                    <td>11/12</td>
+                                    <td>Pending</td>
+                                    <td>/30</td>
+                                    <td><div class="compare-box">\/</div></td>
+                                    <td><!-- feedback indicator/count --></td>
+                                    <td><!-- feedback indicator/count --></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" aria-lable="Introduction Quiz">Introduction Quiz</th>
+                                    <td>10/30</td>
+                                    <td>10/31</td>
+                                    <td>Late</td>
+                                    <td>12/15</td>
+                                    <td><div class="compare-box">\/</div></td>
+                                    <td><div class="feedback-box">1</div></td>
+                                    <td><div class="comment-box">0</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+            
+        </main>
+    </div>
+
+    <dialog id="error-dialog" class="error-dialog" aria-label="Page Under Construction">
+
+        <div class="dialog-header">
+            <h2>Page Under Construction</h2>
+        </div>
+
+        <div class="dialog-content" aria-live="polite">
+            <p>
+            Sorry, that page is under construction
+            in this prototype.
+            </p>
+        </div>
+
+        <div class="dialog-footer" aria-label="Close">
+            <button
+            type="button"
+            class="dialog-close"
+            aria-label="Close dialog"
+            data-close-error
+            >
+            Close
+            </button>
+        </div>
+
+    </dialog>
+    <script>
+        const errorDialog = document.querySelector("#error-dialog");
+
+        // Open the popup when a button is clicked
+        document.querySelectorAll("[data-open-error]").forEach((button) => {
+        button.addEventListener("click", () => {
+            errorDialog.showModal();
+        });
+        });
+
+        // Close the popup
+        document.querySelectorAll("[data-close-error]").forEach((button) => {
+        button.addEventListener("click", () => {
+            errorDialog.close();
+        });
+        });
+    </script>
+
+    <script>
+        const gradeSort = document.getElementById('grade-sort');
+        const alltables = document.querySelectorAll('table tbody');
+
+        gradeSort.addEventListener('change', (event) => {
+            const selectedFilter = event.target.value;
+
+            alltables.forEach(filter => {
+                if (selectedFilter === filter.id){
+                    filter.removeAttribute('hidden');
+                }
+                else {
+                    filter.setAttribute('hidden','');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+

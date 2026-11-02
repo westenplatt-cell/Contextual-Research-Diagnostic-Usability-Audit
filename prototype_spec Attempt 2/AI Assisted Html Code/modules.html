@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modules</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="global-nav" aria-label="Global Navigation">
+        <ul style="list-style-type: none;">
+        <li><a class="nav-button" href="dashboard.html" aria-label="Canvas Page">Canvas</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Profile Page">Profile</a></li>
+        <li><a class="nav-button" href="dashboard.html" aria-current="page" aria-label="Canvas Page">Dashboard</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Calendar Page">Calendar</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Canvas Page">Inbox</a></li>
+        <li><a class="nav-button" data-open-error aria-label="History Page">History</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Media Page">Media </a></li>
+        </ul>
+    </nav>
+    <header class="topbar" >
+        <h1 href="modules.html" aria-label="Class One">Class One</h1>
+        <h1>></h1>
+        <h1>User</h1>
+    </header>
+    <div class="course-layout">
+        <nav class="course-nav" aria-label="Class One Navigation">
+            <ul>
+                <li><a class="course-nav-button" href="modules.html" aria-label="Home Landing Page">Home</a></li>
+                <li><a href="modules.html" aria-current="page" aria-label="Module Page">Modules</a></li>
+                <li><a data-open-error style="text-decoration: underline;" aria-label="Assignment Page">Assignments</a></li>
+                <li><a data-open-error style="text-decoration: underline;" aria-label="Quiz Page">Quiz</a></li>
+                <li><a href="grade.html"  aria-label="Grade Page">Grades</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="app-screen">
+            <section aria-label="Modules">
+                <div style="margin-left:-100px; display:flex; justify-content:space-between; align-items: center; gap: 50px">
+                    <h2 aria-label="Course Modules">Course Modules</h2>
+                    <button type="button" aria-expanded="true" aria-controls="module-week-1">
+                    Collapse All
+                    </button>
+                </div>
+
+                <section class="module-box" aria-labelledby="module-week-1">
+                        <div class="module-title">
+                            <h3 id="week-1-heading">Module 1: Week 1</h3>
+                        
+                        </div>
+
+                        <ul id="module-week-1" aria-label="Module 1 Week 1">
+                            <li class="module-item">
+                                <a href="modules-error.html" aria-label="Introduction Quiz" data-open-error>Introduction Quiz</a>
+                                <p>Due: 10/30</p>
+                            </li>
+                            <li class="module-item">
+                                <a href="modules-error.html" aria-label="Assignment 1" data-open-error>Assignment 1</a>
+                                <p>Due: 11/1</p>
+                            </li>
+                        </ul>
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <dialog id="error-dialog" class="error-dialog" aria-label="Page Under Construction">
+
+        <div class="dialog-header">
+            <h2>Page Under Construction</h2>
+        </div>
+
+        <div class="dialog-content" aria-live="polite">
+            <p>
+            Sorry, that page is under construction
+            in this prototype.
+            </p>
+        </div>
+
+        <div class="dialog-footer" aria-label="Close">
+            <button
+            type="button"
+            class="dialog-close"
+            aria-label="Close dialog"
+            data-close-error
+            >
+            Close
+            </button>
+        </div>
+
+    </dialog>
+    <script>
+        const errorDialog = document.querySelector("#error-dialog");
+
+        // Open the popup when a button is clicked
+        document.querySelectorAll("[data-open-error]").forEach((button) => {
+        button.addEventListener("click", () => {
+            errorDialog.showModal();
+        });
+        });
+
+        // Close the popup
+        document.querySelectorAll("[data-close-error]").forEach((button) => {
+        button.addEventListener("click", () => {
+            errorDialog.close();
+        });
+        });
+    </script>
+    
+</body>
+</html>
+

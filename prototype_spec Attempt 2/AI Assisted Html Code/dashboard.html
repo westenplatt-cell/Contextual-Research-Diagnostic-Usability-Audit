@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="global-nav" aria-label="Global Navigation">
+        <ul style="list-style-type: none;">
+        <li><a class="nav-button" href="dashboard.html" aria-label="Canvas Page">Canvas</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Profile Page">Profile</a></li>
+        <li><a class="nav-button" href="dashboard.html" aria-current="page" aria-label="Canvas Page">Dashboard</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Calendar Page">Calendar</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Canvas Page">Inbox</a></li>
+        <li><a class="nav-button" data-open-error aria-label="History Page">History</a></li>
+        <li><a class="nav-button" data-open-error aria-label="Media Page">Media </a></li>
+        </ul>
+    </nav>
+    <header class="topbar">
+        <h1 aria-label="Dashboard">Dashboard</h1>
+    </header>
+
+    <main id="main-content" class="app-screen dashboard">
+        <section class="course-list" aria-labelledby="courses-heading">
+            <h2 id="courses-heading">Courses</h2>
+            <article class="course-card" aria-labelledby="class-one-title">
+                <div class="card-box">
+                    <a href="modules.html" class="card-image" >
+                        <!-- decorative course artwork: alt="" if non-informative -->
+                    </a>
+                    <div>
+                        <a class="course-card__main" href="modules.html">
+                            <h3 id="class-one-title" aria-label="Class One">Class One</h3>
+                        </a>
+
+                        <nav aria-label="Class One shortcuts">
+                            <a class="card-button" data-open-error>A</a>
+                            <a class="card-button" data-open-error>Q</a>
+                            <a class="card-button" href="grade.html">G</a>
+                        </nav>
+                    </div>
+                </div>
+                
+            </article>
+        </section>
+    </main>
+
+    <dialog id="error-dialog" class="error-dialog" aria-label="Page Under Construction">
+
+        <div class="dialog-header">
+            <h2>Page Under Construction</h2>
+        </div>
+
+        <div class="dialog-content" aria-live="polite">
+            <p>
+            Sorry, that page is under construction
+            in this prototype.
+            </p>
+        </div>
+
+        <div class="dialog-footer" aria-label="Close">
+            <button
+            type="button"
+            class="dialog-close"
+            aria-label="Close dialog"
+            data-close-error
+            >
+            Close
+            </button>
+        </div>
+
+    </dialog>
+    <script>
+        const errorDialog = document.querySelector("#error-dialog");
+
+        // Open the popup when a button is clicked
+        document.querySelectorAll("[data-open-error]").forEach((button) => {
+        button.addEventListener("click", () => {
+            errorDialog.showModal();
+        });
+        });
+
+        // Close the popup
+        document.querySelectorAll("[data-close-error]").forEach((button) => {
+        button.addEventListener("click", () => {
+            errorDialog.close();
+        });
+        });
+    </script>
+</body>
+</html>
+

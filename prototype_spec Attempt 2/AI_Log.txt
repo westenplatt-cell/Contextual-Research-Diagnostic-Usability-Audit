@@ -1,0 +1,1696 @@
+AI_Log.txt
+
+#############################################################
+
+This is my first time using AI like this and the first time I used it for class. I hope it falls into Zone 1 use. 
+If it dosn't, please just grade using my first submition as that does not use AI.
+I used AI to convert a Figma page I made myself into html by first using a Figma plug int to do the conversion before 
+	feeding it to an AI to do the inital clean up from a mess of divs into beginingly recognizable code. 
+I then continued to use AI to help me clean up, orginize and over all help make it look like my Figma prototype as best I could before I manualy intergrated ARIA & Screen Reader Hooks.
+The only major change from my Figma page is how error handling happens, as in figma I could not figure out animations so instead of a pop up I moved to a page with a notice visable, then moved back to the correct page. 
+
+	Dashboard
+		I had AI help me migrate the error message from how I did it in Figma using another page to just a pop up, script was writen by AI,
+		I removed unecessary components and did styling for the error message. 
+		Integrated the error itno into all other examples of Navbar or buttons that lead nowhere.
+		I styled the buttons and sizes and orders so everything sits correctly. I also made focus more visable
+		Class Card Box and its buttons to look like a class card had some help understanding flex.
+	Modules
+		Course Nav Bar was made a set size, and had its placement done by me.
+		Top Bar was all done designed and placed in its position by me.
+	Grade
+		All intial placement and formating was done by using knoledge learned doing dashboard and modules.
+		Had help setting up the tables initialy when tranfiring the page from figma.
+		When I went to get help to set up the hard coded filters, it generated javascrip code that was beyond my abiltiy,
+		so I didnt' use the JavaScript made to imitate the functionality of my Figma program as I felt that was to generative.
+		I did however figure out my own method that took much larger space by using hidden and having multiple pre made tables.
+		
+		All ARIA Coding, tab navigation, and color contrast was chosen by me. 
+#############################################################
+
+Chat Log between ChatGPT and If
+
+#############################################################
+
+Me: "Please help me restructure and clean up this Figma to HTML created code so it fits my goal. The zip contains one programs attempt at the code, and the pdf, shows all of the components appearance.&#x20;
+Please do your best to "Define the exact HTML5 layout structure (`<main>`, `<section>`, `<nav>`, `<form>`, `<fieldset>`, `<label>`) for all prototype screens.""
+
+ChatGPT: "I can help you turn this Figma export into a clean, semantic HTML5 prototype while preserving the appearance and navigation of your original design.
+
+I’ve inspected the ZIP you uploaded. It contains these prototype screens:
+
+| File                   | Screen                                       |
+| ---------------------- | -------------------------------------------- |
+| `dashboard.html`       | Main dashboard                               |
+| `dashboard-error.html` | Dashboard with an under-construction message |
+| `modules.html`         | Course modules                               |
+| `modules-error.html`   | Module interaction/error state               |
+| `grade.html`           | Grades for a student                         |
+| `sidebar-links.html`   | Sidebar navigation component                 |
+
+It also contains a shared `styles.css` file and three SVG assets.
+
+One important note: I can access the ZIP, but I don't see the PDF containing the visual designs in the uploaded files available to me. I can still restructure the HTML based on the existing code, but I would need the PDF to verify the exact visual hierarchy, component dimensions, spacing, and appearance against your Figma prototype.
+
+## 1. The structural goal
+
+The current export is primarily a collection of nested `<div>` elements with automatically generated class names.
+
+For example, it uses patterns such as:
+
+- `.dashboard-255`
+- `.navbar-256`
+- `.node-264`
+- `.text-295`
+
+It also contains nested links, such as an `<a>` inside another `<a>`, which is invalid HTML.
+
+My recommendation is to separate the code into three layers:
+
+1. HTML5 structure: Defines what each screen and component represents.
+2. CSS: Controls the visual appearance, layout, spacing, and responsiveness.
+3. Prototype behavior: Handles navigation, collapsible modules, and other interactions.
+
+This approach will make your code easier to maintain and much easier to modify when the Figma design changes.
+
+## 2. Exact HTML5 structure for your prototype
+
+Here is the recommended hierarchy for the entire application:
+
+```
+
+<body>
+  <!-- Global Canvas navigation -->
+  <nav class="global-nav" aria-label="Global">
+    <ul>
+      <li><a href="dashboard.html">Canvas</a></li>
+      <li><a href="dashboard-error.html">Profile</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="dashboard-error.html">Calendar</a></li>
+      <li><a href="dashboard-error.html">Inbox</a></li>
+      <li><a href="dashboard-error.html">History</a></li>
+      <li><a href="dashboard-error.html">Media</a></li>
+    </ul>
+  </nav>
+
+  <!-- Exactly one main landmark -->
+  <main id="main-content" class="app-screen">
+
+    <!-- Page heading and breadcrumbs -->
+    <header class="page-header">
+      <h1>Modules</h1>
+    </header>
+
+    <!-- Course layout -->
+    <div class="course-layout">
+
+      <!-- Course-specific sidebar -->
+      <nav class="course-nav" aria-label="Class One">
+        <ul>
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="modules-error.html">Assignments</a></li>
+          <li><a href="modules-error.html">Quiz</a></li>
+          <li><a href="grade.html">Grades</a></li>
+        </ul>
+      </nav>
+
+      <!-- Screen-specific content -->
+      <section class="page-content">
+        <h2>Course Modules</h2>
+
+        <!-- Module sections, forms, tables, etc. -->
+
+      </section>
+
+    </div>
+  </main>
+</body>
+
+```
+
+This is the shared layout pattern for the course-related screens. The dashboard has a different content structure, so it should not be forced into the course layout.
+
+## 3. Recommended structure for the Grades screen
+
+The Grades screen is particularly important because it contains structured information and filtering controls.
+
+Your existing Figma export uses separate paragraphs and divs to represent the assignment information. A semantic table will be a better foundation.
+
+```
+
+<section class="page-content grades"
+         aria-labelledby="grades-heading">
+
+  <header class="section-header">
+    <h2 id="grades-heading">Grades for User</h2>
+  </header>
+
+  <form class="grade-filters" action="#" method="get">
+    <fieldset>
+      <legend>Filter grades</legend>
+
+      <div class="form-group">
+        <label for="course-filter">Course</label>
+        <select id="course-filter" name="course">
+          <option value="class-one">Class One</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="sort-filter">Sort By</label>
+        <select id="sort-filter" name="sort">
+          <option value="assignment">Assignment</option>
+          <option value="due-date">Due Date</option>
+          <option value="score">Score</option>
+        </select>
+      </div>
+
+    </fieldset>
+  </form>
+
+  <section class="grade-table-section"
+           aria-labelledby="grade-table-heading">
+
+    <h3 id="grade-table-heading">Assignment Grades</h3>
+
+    <table class="grade-table">
+      <thead>
+        <tr>
+          <th scope="col">Assignment</th>
+          <th scope="col">Due Date</th>
+          <th scope="col">Submitted</th>
+          <th scope="col">Status</th>
+          <th scope="col">Score</th>
+          <th scope="col">Feedback</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th scope="row">Introduction Quiz</th>
+          <td>10/30</td>
+          <td>10/31</td>
+          <td>Late</td>
+          <td>12/15</td>
+          <td>1</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Assignment 1</th>
+          <td>11/1</td>
+          <td>11/12</td>
+          <td>Pending</td>
+          <td>/30</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+</section>
+
+```
+
+This structure provides:
+
+- A meaningful heading for the Grades screen.
+- A properly labeled filter form.
+- A `<fieldset>` and `<legend>` to group the filter controls.
+- A real HTML table with appropriate column and row headers.
+- A structure that can be styled to match your original Figma design.
+
+The `form` above defines the structure of the controls. Actual filtering and sorting behavior would need to be implemented separately.
+
+## 4. Important cleanup decisions
+
+Here are the changes I would prioritize throughout the existing code.
+
+| Current issue                         | Recommended correction                  |
+| ------------------------------------- | --------------------------------------- |
+| Numbered Figma class names            | Replace with meaningful component names |
+| Nested `<a>` elements                 | Use independent, valid links            |
+| Paragraphs used as headings           | Use `<h1>` through `<h3>`               |
+| Divs used as navigation               | Use `<nav>` and lists                   |
+| Divs used as course cards             | Use `<article>`                         |
+| Divs used as module groups            | Use headed `<section>` elements         |
+| Grade rows made of divs               | Use `<table>`, `<thead>`, and `<tbody>` |
+| Clickable divs                        | Use `<button>` for actions              |
+| Unlabeled filter controls             | Add explicit `<label>` elements         |
+| Decorative SVGs with generic alt text | Use `alt=""` when decorative            |
+
+These changes are consistent with Figma's own accessibility guidance, which recommends using the correct HTML elements, adding labels, and establishing a logical heading hierarchy.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://help.figma.com\&sz=32)
+
+Help Center
+
+
+
+## 5. Your structural reference document
+
+I created a detailed Markdown document containing the complete proposed HTML5 structure for all six files, including the dashboard, modules, grades, error states, and sidebar component.
+
+Figma HTML5 Structure Reference
+
+Markdown document · Screen-by-screen HTML structure, semantic rules, and example markup
+
+Download the HTML5 structure reference
+
+### What I would do next
+
+The next stage is to apply this structure directly to the actual HTML files and clean up the shared CSS.
+
+I would preserve the current visual styling as much as possible while replacing the generated markup with semantic components. I would also make sure the links between the dashboard, modules, grades, and error screens continue to work.
+
+Please upload the PDF containing the Figma component appearances. With that reference, I can compare the structure against the actual design instead of relying only on the exported HTML.
+
+That will let me produce a more complete cleaned-up ZIP containing the revised HTML, CSS, and SVG assets, rather than just a structural reference."
+
+Me: Lets go page by page to get it to have it look How I want it. In the Figma due to not being able to figure out animation to pop the error message I opened another page. I wonder if I can combined the two pages into one so I don't need redundant pages. 
+So in dashboard.html I want to have a pop up appear on the if I press a button that currently doesn't lead anwhere
+
+ChatGPT: "Yes! You can absolutely combine the two dashboard pages into one. And I think that is the better approach for your prototype.
+
+I understand what you're trying to accomplish: in Figma, you created a separate `dashboard-error.html` page because you couldn't get the error message to appear as a popup. But in the actual HTML prototype, you don't need a second page for that.
+
+You can have the same `dashboard.html` screen display a popup whenever someone clicks a button that currently doesn't lead anywhere.
+
+For example, your Dashboard has:
+
+- Canvas
+- Profile
+- Dashboard
+- Calendar
+- Inbox
+- History
+- Media
+- The Class One card
+- Assignment, Quiz, and Grades shortcuts
+
+If someone clicks Profile, Calendar, Inbox, History, or Media, we can display an error popup instead of navigating to `dashboard-error.html`.
+
+The Dashboard itself stays visible behind the popup.
+
+This is a common interface pattern called a modal dialog.
+
+## 1. How I would change `dashboard.html`
+
+We can use the native HTML5 `<dialog>` element. It already supports modal behavior, so we don't need a separate page or an animation library.
+
+The interaction would look like this:
+
+[Maintenance Popup | App Builder by Swayam S. Sharma on Dribbble](https://images.openai.com/static-rsc-4/XiaFvxBRA5d5JrLikpoA2pJPeNq9a4oETFMseMBt37fWAZm0VDa3oPtqpCqsi-Luu7eQ_fM6R1Jf_jdLNcbT_vZX5GBIVIfdaOYHUO520d5YoQGFbCZ97WSrLwJgvgVrU-lI3TfpRNmgOywp2OdvaqPD8V5NHi7whUDeFy4zF-k?purpose=inline)
+
+[FAQ Knowledge Base | Article](https://images.openai.com/static-rsc-4/WTdPYgeGX0LFjlLKYAdKD7hj_A5AnZDrYYJMIaBYdToAzWzEooI58HVuFFORxFcHbR8K6qBuL9EHFM_3NQ6e0XacliV15G7_6wL1r_BkxHXm741ToFFQuTH7N655M2YDfoE9V3zpF540bXWGiHRQXgCYw5C-1Uo5eBrtmbdlPQQ?purpose=inline)
+
+[SaaS CRM Product Onboarding Process UI/UX Design by Chapter 24  on Dribbble](https://images.openai.com/static-rsc-4/-ui6JRa8Rn1n9LRBhdomJDwwTR4H_-IaT3igvrDmKOxJ6zd5FiR4-rGjWuj6M9o8mcWsecT0ybrc0ohLEsUkp2ofTw2fS_40Fjz6ymT1qtXReOTj13dUG1-mkUFmPTVm55o9py-PNb-I4cCF2CngbGX_tk-sB8_DQDKTcHEdxGs?purpose=inline)
+
+8
+
+The popup will:
+
+- Appear over the existing Dashboard.
+- Dim the background.
+- Display your under-construction message.
+- Have an X button to close it.
+- Have a button to return to the Dashboard.
+- Close when the user presses Escape.
+
+## 2. Add the popup to `dashboard.html`
+
+Here is the HTML structure I recommend.
+
+```
+
+<!-- Dashboard screen -->
+<main id="main-content" class="app-screen dashboard">
+
+  <header class="page-header">
+    <h1>Dashboard</h1>
+  </header>
+
+  <section class="course-list" aria-labelledby="courses-heading">
+
+    <h2 id="courses-heading">Courses</h2>
+
+    <article class="course-card">
+
+      <h3>Class One</h3>
+
+      <nav aria-label="Class One shortcuts">
+        <a href="modules.html">Modules</a>
+
+        <button type="button" data-open-error>
+          Assignments
+        </button>
+
+        <button type="button" data-open-error>
+          Quiz
+        </button>
+
+        <a href="grade.html">Grades</a>
+      </nav>
+
+    </article>
+
+  </section>
+
+</main>
+
+
+<!-- Error popup -->
+<dialog id="error-dialog" class="error-dialog">
+
+  <div class="dialog-header">
+
+    <h2>Page Under Construction</h2>
+
+    <button
+      type="button"
+      class="dialog-close"
+      aria-label="Close dialog"
+      data-close-error
+    >
+      &times;
+    </button>
+
+  </div>
+
+  <div class="dialog-content">
+
+    <p>
+      Sorry, that page is under construction
+      in this prototype.
+    </p>
+
+  </div>
+
+  <div class="dialog-footer">
+
+    <button
+      type="button"
+      class="dialog-button"
+      data-close-error
+    >
+      Return to Dashboard
+    </button>
+
+  </div>
+
+</dialog>
+
+```
+
+Notice that I used `data-open-error` on the buttons.
+
+That allows us to reuse the same popup for multiple buttons without creating multiple dialogs.
+
+## 3. Add the popup styling to `styles.css`
+
+This is a starting style. Once we compare it against your PDF, we can adjust the exact colors, dimensions, and spacing to match your Figma design.
+
+```
+
+/* Popup dialog */
+
+.error-dialog {
+  width: min(90%, 420px);
+  padding: 0;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #000000;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+  margin: auto;
+}
+
+/* Dim the background */
+
+.error-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+/* Dialog header */
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.dialog-header h2 {
+  font-family: var(--font-family-inter);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Close button */
+
+.dialog-close {
+  border: none;
+  background: transparent;
+
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Dialog content */
+
+.dialog-content {
+  padding: 24px;
+
+  font-family: var(--font-family-inter);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Dialog footer */
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 16px 24px;
+
+  border-top: 1px solid #dddddd;
+}
+
+/* Return button */
+
+.dialog-button {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #5c8fbb;
+  color: #ffffff;
+
+  font-family: var(--font-family-inter);
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+/* Opening animation */
+
+.error-dialog[open] {
+  animation: dialog-appear 180ms ease-out;
+}
+
+@keyframes dialog-appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+```
+
+## 4. Add the JavaScript
+
+This is what makes the popup appear when the user clicks one of the buttons.
+
+Add this script immediately before the closing `</body>` tag in `dashboard.html`.
+
+```
+
+const errorDialog = document.querySelector("#error-dialog");
+
+// Open the popup when a button is clicked
+document.querySelectorAll("[data-open-error]").forEach((button) => {
+  button.addEventListener("click", () => {
+    errorDialog.showModal();
+  });
+});
+
+// Close the popup
+document.querySelectorAll("[data-close-error]").forEach((button) => {
+  button.addEventListener("click", () => {
+    errorDialog.close();
+  });
+});
+
+```
+
+The important part is:
+
+```
+errorDialog.showModal();
+```
+
+That opens the dialog as a modal, keeping the Dashboard behind it.
+
+And:
+
+```
+errorDialog.close();
+```
+
+That closes the popup without reloading or navigating away from the Dashboard.
+
+## 5. How this changes your prototype
+
+Your current structure:
+
+dashboard.html
+
+Main Dashboard
+
+dashboard-error.html
+
+Separate page with error message
+
+The revised structure:
+
+dashboard.html
+
+Main Dashboard remains visible
+
+Modal dialog
+
+Error message appears over the Dashboard
+
+No page navigation
+
+This means we can eventually remove `dashboard-error.html` from the prototype.
+
+One thing I would recommend: let's finish the Dashboard first before changing the other pages. We can get the appearance and behavior right here, then reuse the same popup approach on Modules and Grades if needed.
+
+For the Dashboard, the next detail I want to clarify is the actual popup appearance.
+
+Would you prefer the error message to appear as a small centered popup, or as a larger modal that resembles the error screen you currently created in Figma?"
+
+Me: "So I have it as  "
+<body> 
+<nav> The Global Navbar </nav>
+<main>Dashboard</main>
+<dialog> Page under construction code </dialog>
+
+</body>
+</html>"
+where do I add the "
+const errorDialog = document.querySelector("#error-dialog");
+
+    // Open the popup when a button is clicked
+    document.querySelectorAll("[data-open-error]").forEach((button) => {
+    button.addEventListener("click", () => {
+        errorDialog.showModal();
+    });
+    });
+
+    // Close the popup
+    document.querySelectorAll("[data-close-error]").forEach((button) => {
+    button.addEventListener("click", () => {
+        errorDialog.close();
+    });
+    });
+"
+"
+
+ChatGPT: "Put the JavaScript at the bottom of your `dashboard.html`, right before the closing `</body>` tag.
+
+Your structure should look like this:
+
+```
+<body>
+    <nav>
+        The Global Navbar
+    </nav>
+
+    <main>
+        Dashboard
+
+        <!-- Example button that opens the popup -->
+        <button type="button" data-open-error>
+            Open Page Under Construction
+        </button>
+    </main>
+
+    <!-- The popup -->
+    <dialog id="error-dialog">
+        <h2>Page Under Construction</h2>
+        <p>Sorry, this page is not available in the prototype yet.</p>
+
+        <button type="button" data-close-error>
+            Close
+        </button>
+    </dialog>
+
+    <!-- JavaScript goes here, before </body> -->
+    <script>
+        const errorDialog = document.querySelector("#error-dialog");
+
+        // Open the popup when a button is clicked
+        document.querySelectorAll("[data-open-error]").forEach((button) => {
+            button.addEventListener("click", () => {
+                errorDialog.showModal();
+            });
+        });
+
+        // Close the popup
+        document.querySelectorAll("[data-close-error]").forEach((button) => {
+            button.addEventListener("click", () => {
+                errorDialog.close();
+            });
+        });
+    </script>
+</body>
+</html>
+```
+
+### How it works
+
+- `id="error-dialog"` gives your dialog a unique identifier. Your JavaScript finds it with `document.querySelector("#error-dialog")`.
+- `data-open-error` marks any button that should open the popup.
+- `data-close-error` marks any button inside the dialog that should close it.
+- `errorDialog.showModal()` opens the dialog as a modal.
+- `errorDialog.close()` closes it.
+
+Important: The button needs `data-open-error` for the click handler to find it. You can add that attribute to multiple buttons, and they’ll all open the same popup.
+
+You can also put the JavaScript in a separate file, such as `script.js`, and load it at the bottom of the HTML with:
+
+```
+<script src="script.js"></script>
+```
+
+Placing the script after the dialog is a straightforward way to ensure the HTML elements exist before the JavaScript tries to select them.
+"
+
+Me: "It has been far to long since I have been doing html for me to forgetting <script> exists
+"
+
+ChatGPT "Haha, happens to the best of us! 😄 HTML is probably still in there somewhere—just needed the `<script>` tag to jog your memory.
+
+And honestly, you’ve got the right idea with the `<dialog>` approach. It keeps the dashboard and its popup together instead of maintaining a whole separate error page.
+"
+
+Me: "how do I make a component, the universal navbar, draw from one location so any change their happens on all pages it is used in?
+"
+
+ChatGPT "
+Yes! What you're describing is a reusable component—write the navbar once, then have every page pull it from that one file. Since you're working with regular HTML files, you have a couple options.
+
+For your current project, I'd recommend a small JavaScript component loader. It's easy to add without switching to a framework.
+
+## Option 1: Put the navbar in one HTML file
+
+Create a new file alongside your pages:
+
+```
+figma-export/
+├── dashboard.html
+├── grade.html
+├── modules.html
+├── sidebar-links.html
+├── components/
+│   └── navbar.html
+├── styles.css
+└── scripts/
+    └── load-navbar.js
+```
+
+### 1. `components/navbar.html`
+
+Put the actual navbar markup in this file. For example:
+
+```
+<nav class="global-navbar">
+    <a href="dashboard.html" class="logo">Canvas</a>
+
+    <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="grade.html">Grades</a></li>
+        <li><a href="modules.html">Modules</a></li>
+    </ul>
+</nav>
+```
+
+This is now your single source of truth for the navbar.
+
+### 2. Add a placeholder to each page
+
+In `dashboard.html`, `grade.html`, `modules.html`, etc., replace the duplicated navbar with:
+
+```
+<div id="global-navbar"></div>
+```
+
+For example:
+
+```
+<body>
+    <div id="global-navbar"></div>
+
+    <main>
+        <h1>Dashboard</h1>
+        <!-- Dashboard content -->
+    </main>
+
+    <script src="scripts/load-navbar.js"></script>
+</body>
+```
+
+### 3. `scripts/load-navbar.js`
+
+This script fetches the shared navbar file and inserts it into the placeholder:
+
+```
+fetch("components/navbar.html")
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Could not load navbar");
+        }
+
+        return response.text();
+    })
+    .then((navbarHTML) => {
+        document.querySelector("#global-navbar").innerHTML = navbarHTML;
+    })
+    .catch((error) => {
+        console.error("Navbar loading failed:", error);
+    });
+```
+
+Now, whenever you change `components/navbar.html`, all pages using that loader will show the updated navbar.
+
+One important catch: `fetch()` generally won't work if you just double-click the HTML file and open it as `file://`. Run your project through a local development server instead (for example, VS Code's Live Server extension).
+
+## Option 2: Use a proper template system
+
+If your project grows, a template system such as [Astro](https://astro.build/?utm_source=chatgpt.com) can make shared components more natural. You write a component once and import it into pages.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://v4.docs.astro.build\&sz=32)
+
+Docs
+
+
+
+For your current static Figma export, though, Option 1 is a reasonable starting point. You can keep the HTML pages you already have and share the navbar without rebuilding the whole project.
+"
+
+Me: "now to move things in the page, I got the navbar to be all one group, now I want it to be on the left side of the of each page and locked so it dosen
+"
+
+ChatGPT "I think you mean you want the navbar fixed on the left side of every page, so it stays in place while the page content scrolls—and doesn't move around as you navigate between pages.
+
+In HTML/CSS, that's done with `position: fixed`. Since your navbar is already grouped into one component, you can style that component once in your shared `styles.css`.
+
+## 1. Add a class to the navbar
+
+In your shared `components/navbar.html`:
+
+```
+<nav class="global-navbar">
+    <!-- Your existing navbar content -->
+</nav>
+```
+
+## 2. Add this to `styles.css`
+
+```
+.global-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    z-index: 1000;
+    overflow-y: auto;
+}
+```
+
+This makes the navbar:
+
+- Stay attached to the left side of the browser window.
+- Fill the viewport height.
+- Remain visible when the page scrolls.
+- Appear above the rest of the page content.
+
+## 3. Move the page content over
+
+Because a fixed navbar is removed from the normal page layout, your main content needs room beside it:
+
+```
+main {
+    margin-left: 240px;
+    padding: 24px;
+}
+```
+
+If your navbar is 240px wide, the main content starts 240px from the left.
+
+## What the layout looks like
+
+Canvas
+
+Dashboard
+
+Grades
+
+Modules
+
+Calendar
+
+Inbox
+
+MAIN CONTENT
+
+## Dashboard
+
+Course cards and page content go here.
+
+Illustrative layout: fixed sidebar on the left, page content alongside it.
+
+### One small detail
+
+If you want the navbar to stay in the same place even when the user scrolls, use `position: fixed`.
+
+If you want it to stay on the left but scroll with the page until it reaches the top, use `position: sticky` instead.
+
+For your Canvas-style sidebar, `position: fixed` is probably the behavior you're looking for.
+"
+
+Me: "for the items in the navbar I want them to each be a button of that is the same size, how do should I modify "<button ><a href="dashboard.html">Canvas</a></button>" to make it a universal button
+"
+
+ChatGPT "Yep—that indentation is most likely the browser's default styling for the `<ul>` element. Lists come with built-in left padding and margins, so even though your navbar is styled, the list items are pushed inward.
+
+You can remove that default spacing and center the buttons inside the navbar.
+
+## 1. Reset the list styling
+
+In your `styles.css`, add:
+
+```
+.global-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+```
+
+- `list-style: none` removes the bullet points.
+- `margin: 0` removes the default outside spacing.
+- `padding: 0` removes the default left indent.
+- `width: 100%` lets the list fill the navbar.
+
+## 2. Center the buttons
+
+If you want the buttons stacked vertically and centered horizontally:
+
+```
+.global-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.global-nav li {
+    width: 100%;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+```
+
+If the buttons are supposed to fill the full navbar width, `align-items: center` isn't necessary here because the `li` and button are already set to `width: 100%`. You can remove it if you prefer.
+
+## 3. If you want a little breathing room
+
+Rather than relying on the list's default indentation, control the spacing yourself:
+
+```
+.global-nav {
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.global-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+```
+
+That gives you a predictable amount of space around the navbar items.
+
+The main fix is `ul { padding: 0; margin: 0; }`. The rest just gives you control over how the buttons are arranged and sized.
+"
+
+Me: "
+	moving onto the course nav, I want it to function a lot like global nav,  but have its own y-axis scroll till it reaches its bottom but that is controlled by the greater scroll of the page. Fixed with all other content besides it
+"
+
+ChatGPT "I think I follow what you're aiming for: your Global Nav stays fixed on the far left, while the Course Nav sits beside it and scrolls vertically as part of the overall page. The Course Nav should remain in view while the page content scrolls, but it shouldn't be permanently fixed to the browser like the Global Nav.
+
+For that behavior, CSS `position: sticky` is probably the right fit.
+
+There are two ways to implement it, depending on exactly how you want the Course Nav to behave.
+
+## Option A — Course Nav stays visible while the content scrolls
+
+This is the typical Canvas-style layout:
+
+- Global Nav: fixed to the left edge.
+- Course Nav: sticky beside the Global Nav.
+- Main content: scrolls independently.
+
+### HTML structure
+
+```
+<body>
+    <div id="global-navbar"></div>
+
+    <div class="course-layout">
+        <nav class="course-nav">
+            <!-- Course navigation links -->
+        </nav>
+
+        <main class="page-content">
+            <!-- Page content -->
+        </main>
+    </div>
+
+    <script src="scripts/load-navbar.js"></script>
+</body>
+```
+
+### CSS
+
+```
+:root {
+    --global-nav-width: 80px;
+    --course-nav-width: 240px;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+#global-navbar .global-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: var(--global-nav-width);
+    height: 100vh;
+
+    z-index: 1000;
+}
+
+.course-layout {
+    margin-left: var(--global-nav-width);
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.course-nav {
+    position: sticky;
+    top: 0;
+
+    width: var(--course-nav-width);
+    height: 100vh;
+
+    flex-shrink: 0;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.page-content {
+    flex: 1;
+    min-width: 0;
+    padding: 24px;
+}
+```
+
+One caveat: `position: sticky` is constrained by its scrolling ancestor. If the parent container ends, the Course Nav stops sticking there too. This is what allows it to remain within the course layout rather than being fixed to the entire browser window.
+
+## Option B — Course Nav scrolls with the page, then sticks
+
+If you want the Course Nav to initially appear at its normal location and only become sticky after reaching the top of the viewport, use:
+
+```
+.course-nav {
+    position: sticky;
+    top: 0;
+}
+```
+
+The difference is that `sticky` respects its normal position in the document. `fixed` does not.
+
+### A quick distinction
+
+| Element      | CSS behavior                                           |
+| ------------ | ------------------------------------------------------ |
+| Global Nav   | `position: fixed`                                      |
+| Course Nav   | `position: sticky`                                     |
+| Main content | Normal flow, or its own `overflow-y: auto` scroll area |
+
+For the layout you're describing, I'd start with Option A. It gives you the fixed global sidebar, the course sidebar beside it, and the content area to the right.
+
+If you want the Course Nav to scroll only until its own bottom reaches the bottom of the screen, and then stop moving, that's a slightly different interaction—let me know, because that requires a different layout approach than a simple fixed sidebar.
+"
+
+Me: "I have my side bar working how I want but the main content for this area is not positioning itself correctly, it is all the way at the bottom rather then beside the course nav
+"
+
+ChatGPT "That usually means the main content is being pushed onto a new row below the Course Nav, rather than sitting beside it.
+
+The most common cause is that the Course Nav and `<main>` aren't being laid out together with Flexbox—or the Course Nav is taking up the full width.
+
+Let's check the structure first.
+
+## 1. Make sure both are inside the same layout container
+
+Your HTML should look something like this:
+
+```
+<div class="course-layout">
+
+    <nav class="course-nav">
+        <!-- Course navigation links -->
+    </nav>
+
+    <main class="page-content">
+        <!-- Main page content -->
+    </main>
+
+</div>
+```
+
+The important thing is that `.course-nav` and `.page-content` are siblings inside `.course-layout`.
+
+## 2. Use Flexbox on the parent
+
+```
+.course-layout {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 80px; /* Width of the Global Nav */
+    min-height: 100vh;
+}
+
+.course-nav {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.page-content {
+    flex: 1;
+    min-width: 0;
+    padding: 24px;
+}
+```
+
+This tells the browser:
+
+- Put the Course Nav and main content next to each other.
+- Keep the Course Nav at 240px wide.
+- Let the main content use the remaining space.
+- Prevent the main content from shrinking below its natural minimum in a way that causes overflow.
+
+## 3. Check for conflicting styles
+
+If you have something like this on the main content:
+
+```
+.page-content {
+    position: fixed;
+    bottom: 0;
+}
+```
+
+or:
+
+```
+.page-content {
+    margin-top: 100vh;
+}
+```
+
+remove those rules for now. They can cause the content to appear at the bottom of the page.
+
+Also, if `.course-nav` has `width: 100%`, change it to a fixed width such as `240px`.
+
+### If it's still at the bottom
+
+Could you paste your current:
+
+1. HTML for `.course-layout`, `.course-nav`, and `<main>`
+2. CSS for `.course-layout`, `.course-nav`, and `.page-content`
+
+I can pinpoint the exact rule causing it. The issue is likely a small layout conflict rather than needing to rebuild the sidebar.
+"
+
+Me: ""
+.course-nav{
+    position: sticky;
+    top: 0;
+    margin-left:95px;
+    width: 150px;
+    height: 100vh;
+    z-index: 1000;
+    overflow: auto;
+
+    margin-top:10px;
+    flex-shrink: 0;
+    color:var(--blue);
+
+    box-sizing: border-box;
+    font-weight:700;
+    font-size:18px;
+    margin-top:10px;
+}.page-content {
+    flex: 1;
+    min-width: 0;
+    top: 0;
+    left: 100px;
+    margin-left:100px;
+    height: 100vh;
+
+    overflow-y: auto;
+    box-sizing: boarder-box;
+    padding: 24px;
+}"
+"
+
+ChatGPT "I can see the likely issue! Your `.page-content` has `margin-left: 100px`, but your `.course-nav` also has `margin-left: 95px`. Those margins are being added to the layout, and if the parent isn't using Flexbox, the main content will naturally drop below the sidebar.
+
+There are also a couple of small CSS typos.
+
+## Try this CSS
+
+First, make sure both elements are inside the same `.course-layout` container:
+
+```
+<div class="course-layout">
+    <nav class="course-nav">
+        <!-- Course navigation -->
+    </nav>
+
+    <main class="page-content">
+        <!-- Main content -->
+    </main>
+</div>
+```
+
+Then use:
+
+```
+.course-layout {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 95px; /* Space for the global navbar */
+    min-height: 100vh;
+}
+
+.course-nav {
+    position: sticky;
+    top: 0;
+
+    width: 150px;
+    height: 100vh;
+    flex-shrink: 0;
+
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 18px;
+
+    margin: 10px 0 0;
+}
+
+.page-content {
+    flex: 1;
+    min-width: 0;
+
+    height: 100vh;
+    overflow-y: auto;
+
+    box-sizing: border-box;
+    padding: 24px;
+    margin: 0;
+}
+```
+
+## What changed?
+
+| Your CSS                          | Updated CSS               | Why                                                    |
+| --------------------------------- | ------------------------- | ------------------------------------------------------ |
+| `margin-left: 95px` on Course Nav | Moved to `.course-layout` | Reserves space for the Global Nav once                 |
+| `margin-left: 100px` on main      | Removed                   | Flexbox positions main beside the Course Nav           |
+| `left: 100px`                     | Removed                   | Doesn't position a normal flex item without `position` |
+| `box-sizing: boarder-box`         | `box-sizing: border-box`  | Fixes the typo                                         |
+| `margin-top` twice                | One `margin` declaration  | Removes duplicate styling                              |
+
+The most important part is `display: flex` on `.course-layout`. That tells the browser to arrange the Course Nav and main content side by side. Flexbox is designed for exactly this kind of layout.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://codepen.io\&sz=32)
+
+codepen.io
+
+
+
+One more note: if the main content is supposed to scroll independently, keep `overflow-y: auto` on `.page-content`. If you want the entire page to scroll instead, remove the fixed `height: 100vh` and `overflow-y: auto` from it.
+"
+
+Me: "now how do I get the <h2> title and button on the same line?
+"
+
+ChatGPT "The easiest way is to put the `<h2>` and the button inside a wrapper and use Flexbox. That lets you keep the title on the left and the button beside it (or on the far right).
+
+### HTML
+
+```
+<div class="content-header">
+    <h2>Course Modules</h2>
+
+    <button type="button" class="action-button">
+        Add Module
+    </button>
+</div>
+```
+
+### CSS
+
+```
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.content-header h2 {
+    margin: 0;
+}
+
+.action-button {
+    flex-shrink: 0;
+}
+```
+
+### What the properties do
+
+- `display: flex` — puts the title and button on the same line.
+- `align-items: center` — vertically aligns them.
+- `justify-content: space-between` — places the title at the left and button at the right.
+- `gap: 16px` — keeps space between them.
+- `margin: 0` — removes the heading's default top and bottom margins.
+
+If you want the button immediately next to the title rather than at the far right, change:
+
+```
+justify-content: space-between;
+```
+
+to:
+
+```
+justify-content: flex-start;
+```
+
+Flexbox is a good fit for this kind of heading-and-action row.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://stackoverflow.com\&sz=32)
+
+Stack Overflow+1
+"
+
+Me: "Finally the grade page, I have it fully formatted now I just need help getting the filter working. It is set up using a table using thread what will be sorted and a drop down to decide how. 
+"<label for="grade-sort">Sort by</label>
+                        <select id="grade-sort" name="sort">
+                            <option value="due-date">Due date</option>
+                            <option value="assignment">Assignment Group</option>
+                            <option value="quiz">Quiz Group</option>
+                            <option value="module">Module</option>
+                            <option value="name">Name</option>
+                        </select>"
+is the drop down
+if it is due date which is default will have a divider row based on each unique date, assignment group, only shows assignments, quiz group only quizzes, module will have dividers based on the module they are in, and name sorts alphabetically.  
+"<tbody>
+                                <tr class="sort-divider">Due: 10/30</tr>
+                                <tr>
+                                <th scope="row">Introduction Quiz</th>
+                                <td>10/30</td>
+                                <td>10/31</td>
+                                <td>Late</td>
+                                <td>12/15</td>
+                                <td><div class="compare-box">\/</div></td>
+                                <td><div class="feedback-box">1</div></td>
+                                <td><div class="comment-box">0</div></td>
+                                </tr>
+                                <tr class="sort-divider">Due: 11/1</tr>
+                                <tr>
+                                <th scope="row">Assignment 1</th>
+                                <td>11/1</td>
+                                <td>11/12</td>
+                                <td>Pending</td>
+                                <td>/30</td>
+                                <td><div class="compare-box">\/</div></td>
+                                <td><!-- feedback indicator/count --></td>
+                                <td><!-- feedback indicator/count --></td>
+                                </tr>
+                            </tbody>"
+Due to this being only a prototype I feel it would be okay for the items order and dividers to be hard coded but I do want it to at least be able to switch between the tables being displayed.
+"
+
+ChatGPT "Yes—this is a good fit for a little JavaScript, and since this is a prototype, you can keep the rows and their order hard-coded.
+
+The cleanest approach is to give each table row a few `data-*` attributes. JavaScript can then respond to the dropdown and decide which rows to show, which to hide, and where to put the divider rows.
+
+One important HTML detail: a divider row needs to be a `<tr>` containing a `<td>`, not text directly inside the `<tr>`. We can use that row to display labels like “Due: 10/30” or “Module 1.”
+
+I'll show you a way to implement all five dropdown options while keeping your existing grade table structure.
+
+## 1. Add sorting information to each assignment row
+
+Your dropdown can stay the same. The key is adding metadata to the assignment rows so the script knows what each one is.
+
+For example:
+
+```
+<select id="grade-sort" name="sort">
+    <option value="due-date">Due date</option>
+    <option value="assignment">Assignment Group</option>
+    <option value="quiz">Quiz Group</option>
+    <option value="module">Module</option>
+    <option value="name">Name</option>
+</select>
+```
+
+Then structure the table like this:
+
+```
+<table>
+    <thead>
+        <!-- Your existing column headers -->
+    </thead>
+
+    <tbody id="grade-table-body">
+
+        <tr
+            data-type="quiz"
+            data-due="2026-10-30"
+            data-module="Module 1"
+            data-name="Introduction Quiz"
+        >
+            <th scope="row">Introduction Quiz</th>
+            <td>10/30</td>
+            <td>10/31</td>
+            <td>Late</td>
+            <td>12/15</td>
+            <td><div class="compare-box">\/</div></td>
+            <td><div class="feedback-box">1</div></td>
+            <td><div class="comment-box">0</div></td>
+        </tr>
+
+        <tr
+            data-type="assignment"
+            data-due="2026-11-01"
+            data-module="Module 1"
+            data-name="Assignment 1"
+        >
+            <th scope="row">Assignment 1</th>
+            <td>11/1</td>
+            <td>11/12</td>
+            <td>Pending</td>
+            <td>/30</td>
+            <td><div class="compare-box">\/</div></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </tbody>
+</table>
+```
+
+The attributes are what make the filter work:
+
+| Attribute     | Purpose                              |
+| ------------- | ------------------------------------ |
+| `data-type`   | Identifies an assignment or quiz     |
+| `data-due`    | Stores the date in a sortable format |
+| `data-module` | Identifies the module                |
+| `data-name`   | Stores the assignment name           |
+
+Notice that I used `2026-10-30` for the date rather than `10/30`. That makes it easier for JavaScript to sort dates correctly.
+
+## 2. Add the JavaScript
+
+Put this in a file like `scripts/grade-sort.js`, or inside a `<script>` tag at the bottom of your grade page.
+
+This script will:
+
+- Sort by due date and add a divider for each unique date.
+- Show only assignments for Assignment Group.
+- Show only quizzes for Quiz Group.
+- Group items by module.
+- Sort alphabetically by name.
+- Re-render the table whenever the dropdown changes.
+
+```
+
+const gradeSort = document.querySelector("#grade-sort");
+const gradeTableBody = document.querySelector("#grade-table-body");
+
+// Keep the original assignment rows so we can re-sort them.
+const gradeRows = Array.from(
+    gradeTableBody.querySelectorAll("tr[data-type]")
+);
+
+// Create a divider row for the table.
+function createDivider(label) {
+    const divider = document.createElement("tr");
+    divider.className = "sort-divider";
+
+    const cell = document.createElement("td");
+    cell.colSpan = 8;
+    cell.textContent = label;
+
+    divider.appendChild(cell);
+
+    return divider;
+}
+
+// Group rows by a particular property.
+function groupRows(rows, property) {
+    return rows.reduce((groups, row) => {
+        const key = row.dataset[property] || "Uncategorized";
+
+        if (!groups[key]) {
+            groups[key] = [];
+        }
+
+        groups[key].push(row);
+
+        return groups;
+    }, {});
+}
+
+// Display rows and optional divider rows.
+function renderGroups(groups, labelPrefix = "") {
+    gradeTableBody.replaceChildren();
+
+    Object.entries(groups).forEach(([groupName, rows]) => {
+        gradeTableBody.appendChild(
+            createDivider(`${labelPrefix}${groupName}`)
+        );
+
+        rows.forEach((row) => {
+            gradeTableBody.appendChild(row);
+        });
+    });
+}
+
+// Handle each dropdown option.
+function sortGrades() {
+    const selectedSort = gradeSort.value;
+
+    // Start from the original rows each time.
+    let rows = [...gradeRows];
+
+    switch (selectedSort) {
+
+        case "due-date": {
+            rows.sort((a, b) =>
+                a.dataset.due.localeCompare(b.dataset.due)
+            );
+
+            const groups = groupRows(rows, "due");
+
+            renderGroups(groups, "Due: ");
+            break;
+        }
+
+        case "assignment": {
+            rows = rows.filter(
+                (row) => row.dataset.type === "assignment"
+            );
+
+            rows.sort((a, b) =>
+                a.dataset.name.localeCompare(b.dataset.name)
+            );
+
+            gradeTableBody.replaceChildren();
+
+            rows.forEach((row) => {
+                gradeTableBody.appendChild(row);
+            });
+
+            break;
+        }
+
+        case "quiz": {
+            rows = rows.filter(
+                (row) => row.dataset.type === "quiz"
+            );
+
+            rows.sort((a, b) =>
+                a.dataset.name.localeCompare(b.dataset.name)
+            );
+
+            gradeTableBody.replaceChildren();
+
+            rows.forEach((row) => {
+                gradeTableBody.appendChild(row);
+            });
+
+            break;
+        }
+
+        case "module": {
+            const groups = groupRows(rows, "module");
+
+            // Sort the module names alphabetically.
+            const sortedGroups = Object.fromEntries(
+                Object.entries(groups).sort(([a], [b]) =>
+                    a.localeCompare(b)
+                )
+            );
+
+            renderGroups(sortedGroups, "");
+            break;
+        }
+
+        case "name": {
+            rows.sort((a, b) =>
+                a.dataset.name.localeCompare(b.dataset.name)
+            );
+
+            gradeTableBody.replaceChildren();
+
+            rows.forEach((row) => {
+                gradeTableBody.appendChild(row);
+            });
+
+            break;
+        }
+    }
+}
+
+// Re-sort whenever the dropdown changes.
+gradeSort.addEventListener("change", sortGrades);
+
+// Set up the initial table using the default option.
+sortGrades();
+
+```
+
+If you save the JavaScript in its own file, include it after the table:
+
+```
+<script src="scripts/grade-sort.js"></script>
+```
+
+## 3. Style the divider rows
+
+You can use the existing `.sort-divider` class:
+
+```
+.sort-divider td {
+    background-color: #f1f3f5;
+    color: var(--blue);
+
+    font-weight: 700;
+    padding: 10px 16px;
+
+    border-bottom: 1px solid #d5d9df;
+}
+```
+
+## What the dropdown will do
+
+Due date
+
+Due: 10/30
+
+Introduction Quiz
+
+Due: 11/1
+
+Assignment 1
+
+Assignment Group
+
+Only assignment rows are displayed.
+
+Quiz Group
+
+Only quiz rows are displayed.
+
+Module
+
+Module 1
+
+Introduction Quiz
+
+Assignment 1
+
+Name
+
+Rows are sorted alphabetically without divider rows.
+
+### One detail to watch
+
+The script uses `colSpan = 8` because your example has eight table columns. If your actual grade table has a different number of columns, update that value to match.
+
+Also, the assignment and quiz options above display only their respective items, without group divider rows. If you want those two options to have a heading like “Assignments” or “Quizzes” at the top, we can add that too.
+"
